@@ -23,27 +23,27 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
 const fifteen = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600);
-console.table(fifteen);
+//console.table(fifteen);
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors' first and last names
 const fullNames = inventors.map(inventor => inventor.first + ' ' +inventor.last);
-console.log(fullNames);
+//console.log(fullNames);
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
 const ordered = inventors.sort((a,b) => a.year > b.year ? 1:-1);
-console.table(ordered);
+//console.table(ordered);
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live?
 const totalYears = inventors.reduce((total, inventor) => {
   return total + (inventor.passed - inventor.year);
 }, 0);
-console.log(totalYears);
+//console.log(totalYears);
 
 // 5. Sort the inventors by years lived
 const yearsLived = inventors.sort((a,b) => (a.passed - a.year > b.passed - b.year) ? 1:-1);
-console.table(yearsLived);
+//console.table(yearsLived);
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
@@ -58,7 +58,7 @@ const alpha = people.sort((lastOne, nextOne) => {
     const [bLast, bFirst] = nextOne.split(',');
     return aLast > bLast ? 1:-1;
 });
-console.log(alpha);
+//console.log(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
@@ -68,5 +68,33 @@ const transportation = data.reduce((obj, item) => {
   obj[item]++;
   return obj;
 }, {});
-console.log(transportation);
+//console.log(transportation);
 
+// ## Array Cardio Day 2
+
+const people2 = [
+  { name: 'Wes', year: 1988 },
+  { name: 'Kait', year: 1986 },
+  { name: 'Irv', year: 1970 },
+  { name: 'Lux', year: 2015 }
+];
+
+const comments = [
+  { text: 'Love this!', id: 523423 },
+  { text: 'Super good', id: 823423 },
+  { text: 'You are the best', id: 2039842 },
+  { text: 'Ramen is my fav food ever', id: 123523 },
+  { text: 'Nice Nice Nice!', id: 542328 }
+];
+
+// Some and Every Checks
+// Array.prototype.some() // is at least one person 19 or older?
+// Array.prototype.every() // is everyone 19 or older?
+
+// Array.prototype.find()
+// Find is like filter, but instead returns just the one you are looking for
+// find the comment with the ID of 823423
+
+// Array.prototype.findIndex()
+// Find the comment with this ID
+// delete the comment with the ID of 823423
